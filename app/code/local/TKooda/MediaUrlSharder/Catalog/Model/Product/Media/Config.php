@@ -8,14 +8,14 @@ class tkooda_MediaUrlSharder_Catalog_Model_Product_Media_Config extends Mage_Cat
      * given URL (NOTE: %d can result in a different integer if you change $num_shards, to ensure statistical/even
      * dispersment across that new range of shards).
      * 
-     * e.g. if "Base Media URL" is configured with "http://media%d.cdn.example.com/media/",
+     * e.g. if 'tkooda/mediaurlsharder/num_shards' is configured with "http://media%d.cdn.example.com/media/",
      * and getConfig( "tkooda/mediaurlsharder/num_shards" ) == 9:
      *   getMediaUrl( "/media/imageA.png" ) will always return "http://media3.cdn.example.com/media/imageA.png"
      *   getMediaUrl( "/media/imageB.png" ) will always return "http://media8.cdn.example.com/media/imageB.png"
      *   etc..
      * 
      * Example usage: setup an AWS CloudFront CDN distribution with media[0-9].cdn.example.com aliases,
-     *   and set "Base Media URL" to be "http://media%d.cdn.example.com/media/".
+     *   and set 'tkooda/mediaurlsharder/num_shards' to be "http://media%d.cdn.example.com/media/".
      * 
      * @return string
      */
