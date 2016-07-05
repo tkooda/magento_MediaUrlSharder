@@ -28,17 +28,17 @@ class tkooda_MediaUrlSharder_Catalog_Model_Product_Media_Config extends Mage_Cat
             $num_shards = (int) ( $config_num_shards ? $config_num_shards : 10 ); // default of 10 produces shards numbered 0-9
             
             /* implement core functionality of original getMediaUrl() but with our str_replace() on our own 'tkooda/mediaurlsharder/base_media_url' instead of the stock 'web/secure/base_media_url' so that Mage::getBaseUrl('media') can still be called directly */
-            if ( substr( $file, 0, 1 ) == '/' ) {
-                $media_url = str_replace( '%d', (string) ( hexdec( substr( sha1( $file ), 0, 15 ) ) % $num_shards ), $config_base_media_url ) . $file;
-            } else {
-                $media_url = str_replace( '%d', (string) ( hexdec( substr( sha1( $file ), 0, 15 ) ) % $num_shards ), $config_base_media_url ) . '/' . $file;
+            if ( substr( $file, 0, 1 ) != '/' ) {
+                $file = DS . $file;
             }
-
+            
+            $media_url = str_replace( '%d', (string) ( hexdec( substr( sha1( $file ), 0, 15 ) ) % $num_shards ), $config_base_media_url ) . $file;
+            
         } else {
             $media_url = parent::getMediaUrl( $file );
         }
         
-        Mage::log( "getMediaUrl(): " . $media_url ); // DEBUG
+        Mage::log( "MediaUrlSharder: getMediaUrl(): " . $media_url, Zend_Log::INFO );
         return $media_url;
     }
 
