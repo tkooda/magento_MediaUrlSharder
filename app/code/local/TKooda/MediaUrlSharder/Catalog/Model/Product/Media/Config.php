@@ -29,7 +29,7 @@ class tkooda_MediaUrlSharder_Catalog_Model_Product_Media_Config extends Mage_Cat
             
             /* implement core functionality of original getMediaUrl() but with our str_replace() on our own 'tkooda/mediaurlsharder/base_media_url' instead of the stock 'web/secure/base_media_url' so that Mage::getBaseUrl('media') can still be called directly */
             if ( substr( $file, 0, 1 ) != '/' ) {
-                $file = DS . $file;
+                $file = '/' . $file;
             }
             
             $media_url = str_replace( '%d', (string) ( hexdec( substr( sha1( $file ), 0, 15 ) ) % $num_shards ), $config_base_media_url ) . $file;
