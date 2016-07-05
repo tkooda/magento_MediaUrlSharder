@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <web>
+            <groups>
+                <unsecure>
+                    <fields>
+                        <base_media_url>
+                            <comment><![CDATA[MediaUrlSharder module provides option to use "%d" for calculated integer in the Base Media URL.]]></comment>
+                        </base_media_url>
+                    </fields>
+                </unsecure>
+                <secure>
+                    <fields>
+                        <base_media_url>
+                            <comment><![CDATA[MediaUrlSharder module provides option to use "%d" for calculated integer in the Base Media URL.]]></comment>
+                        </base_media_url>
+                    </fields>
+                </secure>
+            </groups>
+        </web>
+    </sections>
+</config>

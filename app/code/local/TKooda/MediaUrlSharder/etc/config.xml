@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TKooda_MediaUrlSharder>
+            <version>0.0.1</version>
+        </TKooda_MediaUrlSharder>
+    </modules>
+    <global>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product_media_config>TKooda_MediaUrlSharder_Catalog_Model_Product_Media_Config</product_media_config>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+</config>

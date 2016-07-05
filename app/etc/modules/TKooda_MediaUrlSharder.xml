@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TKooda_MediaUrlSharder>
+            <active>true</active>
+            <codePool>local</codePool>
+        </TKooda_MediaUrlSharder>
+    </modules>
+</config>
